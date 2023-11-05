@@ -13,12 +13,17 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up HTML file with API Key
+   - name: Debug HTML file content before sed
+      run: cat testcaseConversion.html
+
+   - name: Set up HTML file with API Key
       env:
         GPT3_API_KEY: ${{ secrets.GPT3_API_KEY }}
       run: |
         sed -i "s/YOUR_API_KEY_PLACEHOLDER/$GPT3_API_KEY/g" testcaseConversion.html
 
+   - name: Debug HTML file content after sed
+      run: cat testcaseConversion.html
 
     - name: Print GPT3_API_KEY
       run: echo "GPT3_API_KEY is ${{ secrets.GPT3_API_KEY }}"    
