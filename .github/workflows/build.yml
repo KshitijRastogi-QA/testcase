@@ -14,10 +14,11 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up HTML file with API Key
-      run: |
-        sed -i "s/YOUR_API_KEY/${{ secrets.GPT3_API_KEY }}/g" testcaseConversion.html
       env:
         GPT3_API_KEY: ${{ secrets.GPT3_API_KEY }}
+      run: |
+        sed -i "s/YOUR_API_KEY_PLACEHOLDER/$GPT3_API_KEY/g" testcaseConversion.html
+
 
     - name: Print GPT3_API_KEY
       run: echo "GPT3_API_KEY is ${{ secrets.GPT3_API_KEY }}"    
