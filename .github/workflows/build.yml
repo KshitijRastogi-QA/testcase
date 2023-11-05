@@ -13,20 +13,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14
-
-    - name: Set up HTML file with API Key
-      run: |
-        echo '<script>' >> $GITHUB_WORKSPACE/testcaseConversion.html
-        echo "const apiKey = '$GPT3_API_KEY';" >> $GITHUB_WORKSPACE/testcaseConversion.html
-        echo '</script>' >> $GITHUB_WORKSPACE/testcaseConversion.html
-
     - name: Deploy to GitHub Pages
       run: |
-        npx gh-pages -d $GITHUB_WORKSPACE/*
-
+        mkdir -p ./public
+        mv $GITHUB_WORKSPACE/testcaseConversion.html ./public
+        npx gh-pages -d ./public
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
