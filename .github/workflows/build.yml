@@ -23,7 +23,7 @@ jobs:
     - name: Deploy to GitHub Pages
       run: |
         mkdir -p ./public
-        cp index.html ./public/
+        cp testcaseConversion.html ./public/
         echo "Deployed on: ${{ github.run_number }}" > ./public/deployment_info.txt
         npx serve ./public
       env:
