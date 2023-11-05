@@ -18,9 +18,6 @@ jobs:
       with:
         node-version: 14
 
-    #- name: Install dependencies
-      #run: npm install # You can skip this if you don't have dependencies.
-
     - name: Set up HTML file with API Key
       run: |
         echo '<script>' >> $GITHUB_WORKSPACE/testcaseConversion.html
@@ -29,7 +26,6 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-        npm run build # Replace with your build command if needed
         npx gh-pages -d $GITHUB_WORKSPACE/testcase # Use the correct path to your HTML file
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
