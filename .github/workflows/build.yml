@@ -19,9 +19,8 @@ jobs:
       env:
         GPT3_API_KEY: ${{ secrets.GPT3_API_KEY }}
 
-
     - name: Print GPT3_API_KEY
-      run: echo "GPT3_API_KEY is $GPT3_API_KEY"    
+      run: echo "GPT3_API_KEY is ${{ secrets.GPT3_API_KEY }}"    
 
     - name: Deploy to GitHub Pages
       run: |
