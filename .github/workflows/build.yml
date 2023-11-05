@@ -23,9 +23,9 @@ jobs:
 
     - name: Set up HTML file with API Key
       run: |
-        echo '<script>' >> $GITHUB_WORKSPACE/testcase/testcaseConversion.html
-        echo "const apiKey = '$GPT3_API_KEY';" >> $GITHUB_WORKSPACE/testcase/testcaseConversion.html
-        echo '</script>' >> $GITHUB_WORKSPACE/testcase/testcaseConversion.html
+        echo '<script>' >> $GITHUB_WORKSPACE/testcaseConversion.html
+        echo "const apiKey = '$GPT3_API_KEY';" >> $GITHUB_WORKSPACE/testcaseConversion.html
+        echo '</script>' >> $GITHUB_WORKSPACE/testcaseConversion.html
 
     - name: Deploy to GitHub Pages
       run: |
