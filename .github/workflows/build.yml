@@ -15,7 +15,7 @@ jobs:
 
     - name: Set up HTML file with API Key
       run: |
-        sed -i "s/YOUR_API_KEY/${{ secrets.GPT3_API_KEY }}/g" index.html
+        sed -i "s/YOUR_API_KEY/${{ secrets.GPT3_API_KEY }}/g" testcaseConversion.html
         # The above line replaces YOUR_API_KEY with the secret value
       env:
         GPT3_API_KEY: ${{ secrets.GPT3_API_KEY }}
