@@ -26,6 +26,7 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-        npx gh-pages -d $GITHUB_WORKSPACE # Use the correct path to your HTML file
+        npx gh-pages -d $GITHUB_WORKSPACE/testcase
+
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
